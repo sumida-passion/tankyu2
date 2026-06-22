@@ -1934,6 +1934,70 @@ div.subchalk{
   backdrop-filter:blur(4px) !important;
 }
 
+
+/* HPリンクをスライド送りより優先 */
+.final-card .final-link{
+  z-index:9999 !important;
+  pointer-events:auto !important;
+}
+.final-card img,.final-card .final-message{
+  pointer-events:none;
+}
+
+
+/* ===== FINAL PAGE CLEAN FIX =====
+   最終ページは写真を明るく表示し、HPボタンだけをリンクにする */
+.final-card{
+  padding:0 !important;
+  background:#fff !important;
+}
+.final-card img{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  display:block !important;
+  filter:none !important;
+  opacity:1 !important;
+  z-index:1 !important;
+  pointer-events:none !important;
+}
+.final-card::after{
+  content:none !important;
+  display:none !important;
+}
+.final-message{
+  display:none !important;
+}
+.final-card a.final-link,
+.final-link{
+  position:absolute !important;
+  inset:auto auto 34px 50% !important;
+  transform:translateX(-50%) !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:auto !important;
+  height:auto !important;
+  min-width:280px !important;
+  padding:16px 34px !important;
+  border-radius:999px !important;
+  background:rgba(6,17,31,.92) !important;
+  color:#fff8ea !important;
+  text-decoration:none !important;
+  font-size:1.15rem !important;
+  font-weight:900 !important;
+  letter-spacing:.06em !important;
+  box-shadow:0 10px 24px rgba(0,0,0,.30) !important;
+  z-index:99999 !important;
+  pointer-events:auto !important;
+  cursor:pointer !important;
+  user-select:none !important;
+  -webkit-user-select:none !important;
+}
+
 </style>
 </head>
 <body>
@@ -1967,15 +2031,7 @@ div.subchalk{
   </div>
 </section>
 <section class="slide"><div class="card nara-bg center"><p class="kicker">もう一度、問いが生まれる</p><div class="big">なぜ？</div></div></section>
-<section class="slide theory-slide">
-  <div class="card">
-    <div class="theory-wrap">
-      <div class="theory-small">諸説はある。</div>
-      <div class="theory-mid">けれど、</div>
-      <div class="theory-final">答えはない。</div>
-    </div>
-  </div>
-</section>
+
 <section class="slide step-slide" id="edgeRevealSlide">
   <div class="card edge-visual-card no-img">
     <div class="edge-bubbles">
@@ -2028,8 +2084,8 @@ div.subchalk{
 </section>
 
 <section class="slide" id="flowSlide"><div class="card wood-card"><p class="kicker">調べ学習と探究の境界線</p><div class="flow-wrap"><div class="flow-col"><div class="flow-item">調べる</div><div class="flow-item">答えが出る</div><div class="flow-item">さらに調べる</div></div><div class="flow-center">境界線</div><div class="flow-col"><div class="flow-item">答えが出ない</div><div class="flow-item">諸説がある<br>どれを選ぶ？</div><div class="flow-item">または<br>仮説を立てる</div></div></div><button class="flow-btn" onclick="revealFlow()">進める</button></div></section>
-<section class="slide"><div class="card center"><p class="kicker">探究の入口</p><h2>ここから先は、<br>誰かの答えを探す場所ではない。</h2><div style="margin-top:48px;"><p class="mid">根拠を持って、</p><p class="big redline" style="margin-top:16px;">自分の立場を選ぶ場所。</p></div></div></section>
-<section class="slide"><div class="card nara-bg center"><p class="kicker">だから</p><h2>探究は、<br>歴史だけのものではない。</h2><div class="mid" style="margin-top:30px;">未来を創ることにもつながる。</div></div></section>
+<section class="slide"><div class="card center"><p class="kicker">探究の入口</p><h2>ここから先は、<br>誰かの答えを探す場所ではない。</h2><div style="margin-top:48px;"><p class="mid">根拠を持って、</p><p class="big redline" style="margin-top:16px;">自分の立場を選ぶ。</p></div></div></section>
+
 
 <section class="slide step-slide" id="adultRolesSlide">
   <div class="card adult-roles-card">
@@ -2169,15 +2225,10 @@ div.subchalk{
   </div>
 </section>
 
-<section class="slide">
-  <div class="card nara-bg center closing-support-card">
-    <p class="kicker">奈良文化高校には</p>
-    <div class="big" style="margin-top:100px;">探究を支える<br>大人がいる。</div>
-  </div>
-</section>
+
 <section class="slide" id="teamSlide"><div class="card center"><p class="kicker">奈良文化高校 探究チーム</p><h2>世界の端まで、<br>共に歩む。</h2><div class="team-grid"><div class="team-person"><span class="name">辻井先生</span><img src="https://sumida-passion.github.io/game-assets/images/tsujii.PNG" alt="辻井先生"></div><div class="team-person"><span class="name">金房先生</span><img src="https://sumida-passion.github.io/game-assets/images/kanabo.PNG" alt="金房先生"></div><div class="team-person"><span class="name">川﨑先生</span><img src="https://sumida-passion.github.io/game-assets/images/kawasaki.PNG" alt="川﨑先生"></div><div class="team-person"><span class="name">増田先生</span><img src="https://sumida-passion.github.io/game-assets/images/masuda.PNG" alt="増田先生"></div><div class="team-person"><span class="name">岡本先生</span><img src="https://sumida-passion.github.io/game-assets/images/okamoto.PNG" alt="岡本先生"></div><div class="team-person"><span class="name">住田先生</span><img src="https://sumida-passion.github.io/game-assets/images/sumida.jpg" alt="住田先生"></div></div><button class="team-btn" onclick="revealTeam()">表示する</button></div></section>
 <section class="slide"><div class="card nara-bg center"><p class="kicker">最後に</p><h2>学校では、<br>何を遺し、<br>何を変えるのか。</h2></div></section>
-<section class="slide"><div class="card final-card"><a href="https://www.narabunka.ed.jp" target="_blank"><img src="https://sumida-passion.github.io/game-assets/images/hpmain.jpg" alt="奈良文化高校"><div class="final-message"><div class="big">世界の端へ。</div></div><span class="final-link">奈良文化高校 公式HPへ →</span></a></div></section>
+<section class="slide"><div class="card final-card"><img src="https://sumida-passion.github.io/game-assets/images/hpmain.jpg" alt="奈良文化高校"><a class="final-link" id="hpLink" href="https://www.narabunka.ed.jp/" target="_self" rel="noopener" onclick="event.preventDefault(); event.stopPropagation(); window.location.href='https://www.narabunka.ed.jp/'; return false;" ontouchend="event.preventDefault(); event.stopPropagation(); window.location.href='https://www.narabunka.ed.jp/'; return false;">奈良文化高校 公式HPへ →</a></div></section>
 
 <div class="nav"><button onclick="prevSlide()">← 戻る</button><button onclick="nextSlide()">次へ →</button></div>
 <div class="count" id="count"></div>
@@ -2237,6 +2288,8 @@ function revealTeamAll(){
   return false;
 }
 function nextSlide(){
+if(document.activeElement&&document.activeElement.closest&&document.activeElement.closest("a")) return;
+
   if(slides[current].id==="teamSlide"){
     if(revealTeamAll()) return;
   }
@@ -2269,14 +2322,22 @@ document.addEventListener("keydown",e=>{
 });
 
 let startX=null;
-let touchOnButton=false;
+let touchOnControl=false;
+function isControlTarget(target){
+  return !!(target && target.closest && target.closest("button,a,.final-link"));
+}
+
 document.addEventListener("touchstart",e=>{
-  touchOnButton=!!e.target.closest("button");
+  touchOnControl=isControlTarget(e.target);
   startX=e.touches[0].clientX;
 },{passive:true});
 
 document.addEventListener("touchend",e=>{
-  if(touchOnButton){touchOnButton=false;startX=null;return;}
+  if(touchOnControl || isControlTarget(e.target)){
+    touchOnControl=false;
+    startX=null;
+    return;
+  }
   if(startX===null)return;
   const diff=e.changedTouches[0].clientX-startX;
   if(Math.abs(diff)>70){
@@ -2288,10 +2349,39 @@ document.addEventListener("touchend",e=>{
   startX=null;
 },{passive:true});
 
-document.querySelectorAll("button").forEach(btn=>{
-  btn.addEventListener("click",e=>e.stopPropagation());
-  btn.addEventListener("touchend",e=>e.stopPropagation(),{passive:true});
+document.querySelectorAll("button,a").forEach(el=>{
+  el.addEventListener("click",e=>e.stopPropagation());
+  el.addEventListener("touchstart",e=>e.stopPropagation(),{passive:true});
+  el.addEventListener("touchend",e=>e.stopPropagation(),{passive:true});
 });
+
+const hpLink=document.getElementById("hpLink");
+if(hpLink){
+  const goHp=e=>{
+    e.preventDefault();
+    e.stopPropagation();
+    window.location.href="https://www.narabunka.ed.jp/";
+  };
+  hpLink.addEventListener("click",goHp);
+  hpLink.addEventListener("touchend",goHp,{passive:false});
+}
+
+
+// HPリンク最優先：スライド送りイベントより先に捕まえる
+(function(){
+  const hp=document.getElementById("hpLink");
+  if(!hp) return;
+  const openHp=function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    if(e.stopImmediatePropagation) e.stopImmediatePropagation();
+    window.location.assign("https://www.narabunka.ed.jp/");
+    return false;
+  };
+  hp.addEventListener("click", openHp, true);
+  hp.addEventListener("touchstart", function(e){ e.stopPropagation(); if(e.stopImmediatePropagation) e.stopImmediatePropagation(); }, true);
+  hp.addEventListener("touchend", openHp, true);
+})();
 
 showSlide(0);
 </script>
