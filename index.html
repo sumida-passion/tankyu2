@@ -2016,6 +2016,195 @@ div.subchalk{
 #finalSlide{
   cursor:pointer !important;
 }
+
+
+/* =========================================================
+   NARAMACHI ENTRANCE MAP PAGE
+   3つの入口を一目で見せ、タップで順番に出す
+   ========================================================= */
+.entrance-map-card{
+  background:
+    radial-gradient(circle at 50% 18%,rgba(242,201,120,.18),transparent 32%),
+    linear-gradient(135deg,rgba(43,27,18,.94),rgba(17,24,39,.96) 70%,rgba(7,16,31,.98)) !important;
+  color:#fff8ea;
+}
+.entrance-map-card .map-title{
+  text-align:center;
+  font-size:clamp(2rem,3.4vw,3.55rem);
+  line-height:1.18;
+  font-weight:950;
+  letter-spacing:.04em;
+  margin-top:2px;
+}
+.entrance-map-card .map-title .gold{color:#f2c978}
+.entrance-map-card .entrance-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:30px;
+}
+.entrance-map-card .entrance-card{
+  opacity:0 !important;
+  transform:translateY(18px) scale(.96);
+  filter:blur(8px);
+  background:rgba(255,248,234,.94);
+  color:#111827;
+  border-radius:28px;
+  overflow:hidden;
+  min-height:355px;
+  box-shadow:0 18px 44px rgba(0,0,0,.30);
+  border:1px solid rgba(255,248,234,.28);
+}
+.entrance-map-card .entrance-card.step-show{
+  opacity:1 !important;
+  transform:translateY(0) scale(1);
+  filter:blur(0);
+  transition:opacity .55s ease, transform .55s ease, filter .55s ease;
+}
+.entrance-map-card .entrance-img{
+  width:100%;
+  height:148px;
+  object-fit:cover;
+  display:block;
+}
+.entrance-map-card .entrance-img.doc{
+  object-fit:contain;
+  background:#fff;
+  padding:10px;
+}
+.entrance-map-card .entrance-body{padding:20px 22px 22px}
+.entrance-map-card .entrance-label{
+  display:inline-block;
+  background:#111827;
+  color:#fff8ea;
+  border-radius:999px;
+  padding:7px 13px;
+  font-size:clamp(.86rem,1vw,1rem);
+  font-weight:950;
+  letter-spacing:.04em;
+  margin-bottom:12px;
+}
+.entrance-map-card .entrance-card h3{
+  margin:0;
+  color:#111827;
+  font-size:clamp(1.55rem,2.25vw,2.35rem);
+  line-height:1.18;
+  font-weight:950;
+}
+.entrance-map-card .entrance-card p{
+  margin:12px 0 0;
+  color:#6f4628;
+  font-size:clamp(1.02rem,1.28vw,1.18rem);
+  line-height:1.52;
+  font-weight:900;
+}
+.entrance-map-card .merge-arrows{
+  opacity:0 !important;
+  transform:translateY(14px);
+  filter:blur(8px);
+  position:absolute;
+  left:54px;
+  right:54px;
+  bottom:172px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  align-items:center;
+  text-align:center;
+  color:#f2c978;
+  font-size:clamp(2.6rem,4.5vw,4.8rem);
+  font-weight:950;
+  text-shadow:0 10px 24px rgba(0,0,0,.36);
+}
+.entrance-map-card .merge-arrows.step-show{
+  opacity:1 !important;
+  transform:translateY(0);
+  filter:blur(0);
+  transition:opacity .55s ease, transform .55s ease, filter .55s ease;
+}
+.entrance-map-card .map-final{
+  opacity:0 !important;
+  transform:translateY(18px) scale(.96);
+  filter:blur(8px);
+  position:absolute;
+  left:78px;
+  right:78px;
+  bottom:48px;
+  background:rgba(17,24,39,.88);
+  border:1px solid rgba(255,248,234,.22);
+  border-left:16px solid #f2c978;
+  border-radius:28px;
+  padding:22px 30px;
+  box-shadow:0 20px 46px rgba(0,0,0,.32);
+}
+.entrance-map-card .map-final.step-show{
+  opacity:1 !important;
+  transform:translateY(0) scale(1);
+  filter:blur(0);
+  transition:opacity .6s ease, transform .6s ease, filter .6s ease;
+}
+.entrance-map-card .map-final .main{
+  color:#fff8ea;
+  font-size:clamp(1.65rem,2.55vw,2.65rem);
+  line-height:1.25;
+  font-weight:950;
+}
+.entrance-map-card .map-final .red{
+  color:#ff715f;
+  text-shadow:0 8px 22px rgba(0,0,0,.38);
+}
+.entrance-map-card .map-final .sub{
+  margin-top:8px;
+  color:#f2c978;
+  font-size:clamp(1rem,1.45vw,1.3rem);
+  font-weight:900;
+}
+
+
+
+/* ===== GPT FIX 2026-06-22: discovery labels no overlap + final HP link ===== */
+.discovery-card .discovery-doc{
+  right:52px !important;
+  top:86px !important;
+  width:47% !important;
+  height:66% !important;
+  z-index:2 !important;
+}
+.discovery-card .discovery-text{
+  left:58px !important;
+  top:108px !important;
+  width:34% !important;
+  gap:18px !important;
+  z-index:5 !important;
+}
+.discovery-card .discovery-pop{
+  max-width:100% !important;
+  padding:18px 22px !important;
+  font-size:clamp(1.25rem,2.05vw,2.05rem) !important;
+  line-height:1.28 !important;
+  border-radius:20px !important;
+}
+.discovery-card .discovery-pop.small{
+  font-size:clamp(1.1rem,1.75vw,1.72rem) !important;
+}
+.discovery-card .discovery-main{
+  left:58px !important;
+  right:auto !important;
+  bottom:80px !important;
+  width:74% !important;
+  z-index:6 !important;
+  font-size:clamp(1.95rem,3.35vw,3.35rem) !important;
+}
+.final-card-link,
+.final-card-link *{
+  cursor:pointer !important;
+  pointer-events:auto !important;
+}
+.final-card .final-link{
+  z-index:20 !important;
+  pointer-events:auto !important;
+}
+
 </style>
 </head>
 <body>
@@ -2078,26 +2267,47 @@ div.subchalk{
 </section>
 <section class="slide"><div class="card center nara-bg"><p class="kicker">明らかな答えがないまま</p><h2 class="future-answer-title"><span class="future-word">未来を</span>考え続ける道を、<br>選んでいく。</h2><div class="mid" style="margin-top:30px;">ここにも、答えはない。</div></div></section>
 
-<section class="slide step-slide" id="commonEdgeSlide">
-  <div class="card common-edge-card">
-    <img class="common-img" src="https://sumida-passion.github.io/game-assets/images/naramachi08.jpg" alt="世界の端のイメージ">
-    <div class="common-label">共通していること</div>
-    <div class="common-title">この景色の前に、<br>三つの問いを置いてみる。</div>
-    <div class="common-list">
-      <div class="common-item step-item">
-        <h3>未来へどう伝えるか</h3>
-        <p>うまくいく答えは、まだない。</p>
+<section class="slide step-slide" id="naramachiEntranceMapSlide">
+  <div class="card entrance-map-card">
+    <div class="map-title"><span class="gold">ならまち探究</span>には、<br>3つの入り口がある。</div>
+
+    <div class="entrance-grid">
+      <div class="entrance-card step-item">
+        <img class="entrance-img" src="https://sumida-passion.github.io/game-assets/images/naramachi05.jpg" alt="ならまちの遺された階段">
+        <div class="entrance-body">
+          <span class="entrance-label">入口 1｜ならまちで遺すもの</span>
+          <h3>なぜ遺されたのか。</h3>
+          <p>庭・仏間・階段。<br>誰の想いがあり、未来へどう伝えるのか。</p>
+        </div>
       </div>
-      <div class="common-item step-item">
-        <h3>屋根裏に土を盛る理由</h3>
-        <p>諸説はあるが、答えはない。</p>
+
+      <div class="entrance-card step-item">
+        <img class="entrance-img doc" src="https://sumida-passion.github.io/game-assets/images/naramachi04.png" alt="屋根裏に土を盛る構造図">
+        <div class="entrance-body">
+          <span class="entrance-label">入口 2｜歴史で明らかになっていないもの</span>
+          <h3>なぜ土を盛っているのか。</h3>
+          <p>調べても、理由が見えない。<br>諸説はある。でも答えはない。</p>
+        </div>
       </div>
-      <div class="common-item step-item">
-        <h3>何を遺し、何を変えるのか</h3>
-        <p>答えのないまま、考え続ける。</p>
+
+      <div class="entrance-card step-item">
+        <img class="entrance-img" src="https://sumida-passion.github.io/game-assets/images/naramachi07.jpg" alt="ならまちで新しくできていくもの">
+        <div class="entrance-body">
+          <span class="entrance-label">入口 3｜ならまちで変えていくもの</span>
+          <h3>何を変え、何を残すのか。</h3>
+          <p>ホテルができる。新しいものができる。<br>それで何を変えていくのか。</p>
+        </div>
       </div>
     </div>
-    <div class="common-final step-item">どれも、<span class="break">世界の端である。</span></div>
+
+    <div class="merge-arrows step-item">
+      <div>↘</div><div>↓</div><div>↙</div>
+    </div>
+
+    <div class="map-final step-item">
+      <div class="main">まだ答えがないところまで進む。<span class="red">そこが、世界の端。</span></div>
+      <div class="sub">そこから、自分の仮説を立てて、立証していく。これが探究の入り口。</div>
+    </div>
   </div>
 </section>
 
@@ -2246,7 +2456,12 @@ div.subchalk{
 
 <section class="slide" id="teamSlide"><div class="card center"><p class="kicker">奈良文化高校 探究チーム</p><h2>世界の端まで、<br>共に歩む。</h2><div class="team-grid"><div class="team-person"><span class="name">辻井先生</span><img src="https://sumida-passion.github.io/game-assets/images/tsujii.PNG" alt="辻井先生"></div><div class="team-person"><span class="name">金房先生</span><img src="https://sumida-passion.github.io/game-assets/images/kanabo.PNG" alt="金房先生"></div><div class="team-person"><span class="name">川﨑先生</span><img src="https://sumida-passion.github.io/game-assets/images/kawasaki.PNG" alt="川﨑先生"></div><div class="team-person"><span class="name">増田先生</span><img src="https://sumida-passion.github.io/game-assets/images/masuda.PNG" alt="増田先生"></div><div class="team-person"><span class="name">岡本先生</span><img src="https://sumida-passion.github.io/game-assets/images/okamoto.PNG" alt="岡本先生"></div><div class="team-person"><span class="name">住田先生</span><img src="https://sumida-passion.github.io/game-assets/images/sumida.jpg" alt="住田先生"></div></div><button class="team-btn" onclick="revealTeam()">表示する</button></div></section>
 <section class="slide"><div class="card nara-bg center"><p class="kicker">最後に</p><h2>学校では、<br>何を遺し、<br>何を変えるのか。</h2></div></section>
-<section class="slide" id="finalSlide"><a class="card final-card final-card-link" href="https://www.narabunka.ed.jp/" target="_blank" rel="noopener noreferrer" aria-label="奈良文化高校公式HPを開く"><img src="https://sumida-passion.github.io/game-assets/images/hpmain.jpg" alt="奈良文化高校"><span class="final-link">奈良文化高校 公式HPへ →</span></a></section>
+<section class="slide" id="finalSlide">
+  <div class="card final-card" id="finalHpCard" role="link" tabindex="0" aria-label="奈良文化高校公式HPを開く">
+    <img src="https://sumida-passion.github.io/game-assets/images/hpmain.jpg" alt="奈良文化高校">
+    <a id="hpLink" class="final-link" href="https://www.narabunka.ed.jp/" target="_blank" rel="noopener">奈良文化高校 公式HPへ →</a>
+  </div>
+</section>
 
 <div class="nav"><button onclick="prevSlide()">← 戻る</button><button onclick="nextSlide()">次へ →</button></div>
 <div class="count" id="count"></div>
@@ -2372,6 +2587,7 @@ document.querySelectorAll("button,a").forEach(el=>{
   el.addEventListener("click",e=>e.stopPropagation());
   el.addEventListener("touchstart",e=>e.stopPropagation(),{passive:true});
   el.addEventListener("touchend",e=>e.stopPropagation(),{passive:true});
+  el.addEventListener("pointerdown",e=>e.stopPropagation());
 });
 
 const hpLink=document.getElementById("hpLink");
@@ -2400,6 +2616,33 @@ if(hpLink){
   hp.addEventListener("click", openHp, true);
   hp.addEventListener("touchstart", function(e){ e.stopPropagation(); if(e.stopImmediatePropagation) e.stopImmediatePropagation(); }, true);
   hp.addEventListener("touchend", openHp, true);
+})();
+
+
+
+// FINAL HP LINK FIX: 最後のカード・ボタンは必ず公式HPを開く
+(function(){
+  const url="https://www.narabunka.ed.jp/";
+  const hp=document.getElementById("hpLink");
+  const card=document.getElementById("finalHpCard");
+  function openHp(e){
+    if(e){
+      e.preventDefault();
+      e.stopPropagation();
+      if(e.stopImmediatePropagation) e.stopImmediatePropagation();
+    }
+    const opened=window.open(url,"_blank","noopener");
+    if(!opened){ window.location.href=url; }
+    return false;
+  }
+  [hp,card].forEach(el=>{
+    if(!el) return;
+    el.addEventListener("click",openHp,true);
+    el.addEventListener("touchend",openHp,{capture:true,passive:false});
+    el.addEventListener("keydown",function(e){
+      if(e.key==="Enter"||e.key===" ") openHp(e);
+    },true);
+  });
 })();
 
 showSlide(0);
